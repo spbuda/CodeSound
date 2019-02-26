@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeSound", "CodeSound\CodeSound.csproj", "{5A86D3E9-67CE-4F11-AFCF-0655220DB9B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeSound.Tests", "CodeSound.Tests\CodeSound.Tests.csproj", "{3A9B7CB4-E54D-4CBA-8E35-EDE36F547338}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A86D3E9-67CE-4F11-AFCF-0655220DB9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A86D3E9-67CE-4F11-AFCF-0655220DB9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A86D3E9-67CE-4F11-AFCF-0655220DB9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A86D3E9-67CE-4F11-AFCF-0655220DB9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A9B7CB4-E54D-4CBA-8E35-EDE36F547338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A9B7CB4-E54D-4CBA-8E35-EDE36F547338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A9B7CB4-E54D-4CBA-8E35-EDE36F547338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9B7CB4-E54D-4CBA-8E35-EDE36F547338}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {501DEFBC-24CA-492C-AFE4-390B464310BC}
+	EndGlobalSection
+EndGlobal
