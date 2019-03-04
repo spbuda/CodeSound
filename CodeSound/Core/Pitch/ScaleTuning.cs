@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace CodeSound.Pitch {
-	public abstract partial class ScaleTuning {
+	public abstract class ScaleTuning {
 		protected readonly Dictionary<NoteIndex, float> frequencies = new Dictionary<NoteIndex, float> ();
 		protected int TopOctave => 8;
 		protected int RawSubdivisions => 24;

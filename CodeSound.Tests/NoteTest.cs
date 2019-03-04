@@ -1,4 +1,5 @@
 ﻿using CodeSound.Pitch;
+using CodeSound.Utilities;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,8 @@ namespace CodeSound.Tests {
 			8, BaseNote.G, Accidental.Natural, RawNote.Subdivisions * (Note.TopOctave+1) - 1)]
 		public void NoteInterval(int octave1, BaseNote n1, Accidental a1,
 			int octave2, BaseNote n2, Accidental a2, int expectedDifference) {
-			Note note1 = Note.Build (octave1, n1, a1);
-			Note note2 = Note.Build (octave2, n2, a2);
+			Note note1 = Note.Create (octave1, n1, a1);
+			Note note2 = Note.Create (octave2, n2, a2);
 
 			Assert.That (note1.QuarterStepsBetween (note2), Is.EqualTo (expectedDifference));
 		}
@@ -38,9 +39,9 @@ namespace CodeSound.Tests {
 			Accidental.Natural, RawNote.Index.C, 3)]
 		public void NoteIndexValue(int octave, BaseNote n1, Accidental a1, 
 			int expectedIndex, int expectedOctave) {
-			Note note1 = Note.Build (octave, n1, a1);
-			ScaleTuning.NoteIndex index1 = new ScaleTuning.NoteIndex (note1);
-			ScaleTuning.NoteIndex expected = new ScaleTuning.NoteIndex (expectedOctave, expectedIndex);
+			Note note1 = Note.Create (octave, n1, a1);
+			NoteIndex index1 = new NoteIndex (note1);
+			NoteIndex expected = new NoteIndex (expectedOctave, expectedIndex);
 
 			Assert.That (index1, Is.EqualTo (expected));
 		}
@@ -88,18 +89,18 @@ namespace CodeSound.Tests {
 		public void NoteIndexIncrements(int octave, int stepCount, int stepSize,
 			BaseNote n1, Accidental a1, BaseNote nRoot, Accidental aRoot,
 			int expectedIndex, int expectedOctave) {
-			Note note1 = Note.Build (octave, n1, a1);
-			Note note2 = Note.Build (octave, nRoot, aRoot);
+			Note note1 = Note.Create (octave, n1, a1);
+			Note note2 = Note.Create (octave, nRoot, aRoot);
 
-			ScaleTuning.NoteIndex index1 = new ScaleTuning.NoteIndex (note1);
+			NoteIndex index1 = new NoteIndex (note1);
 			int center = note2.Index;
 
-			ScaleTuning.NoteIndex nextIndex = index1;
+			NoteIndex nextIndex = index1;
 			for (int i = 0; i < stepCount; i++) {
 				nextIndex = nextIndex.Next (center, stepSize);
 			}
 
-			ScaleTuning.NoteIndex expected = new ScaleTuning.NoteIndex (expectedOctave, expectedIndex);
+			NoteIndex expected = new NoteIndex (expectedOctave, expectedIndex);
 
 			Assert.That(nextIndex, Is.EqualTo(expected));
 		}

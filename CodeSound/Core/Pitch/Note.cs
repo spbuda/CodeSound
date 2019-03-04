@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeSound.Utilities;
+using System;
 
 namespace CodeSound.Pitch {
 	public struct Note {
@@ -15,15 +16,15 @@ namespace CodeSound.Pitch {
 			Octave = o;
 		}
 
-		public static Note Build(int index, int octave) {
-			return new Note (RawNote.Build (index), octave);
+		public static Note Create(int index, int octave) {
+			return new Note (RawNote.Create (index), octave);
 		}
 
-		public static Note Build(int o, BaseNote n, Accidental a = Accidental.Natural) {
-			return Build (o, RawNote.Build (n, a));
+		public static Note Create(int o, BaseNote n, Accidental a = Accidental.Natural) {
+			return Create (o, RawNote.Build (n, a));
 		}
 
-		public static Note Build(int o, RawNote n) {
+		public static Note Create(int o, RawNote n) {
 			return new Note (n, o);
 		}
 
@@ -65,7 +66,7 @@ namespace CodeSound.Pitch {
 			string accidentalText = text.Substring (1, text.Length - 1);
 			char last = text[text.Length - 1];
 
-			return new Note (RawNote.Build (NoteHelper.ParseBaseNote (text[0]), NoteHelper.ParseAccidental (accidentalText)), NoteHelper.ParseOctave (last));
+			return new Note (RawNote.Create (NoteHelper.ParseBaseNote (text[0]), NoteHelper.ParseAccidental (accidentalText)), NoteHelper.ParseOctave (last));
 		}
 
 		public override bool Equals(object obj) {

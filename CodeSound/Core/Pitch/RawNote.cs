@@ -13,7 +13,7 @@ namespace CodeSound.Pitch {
 			accidental = a;
 		}
 
-		public static RawNote Build(BaseNote n, Accidental a = Accidental.Natural) {
+		public static RawNote Create(BaseNote n, Accidental a = Accidental.Natural) {
 			switch (n) {
 			case BaseNote.A:
 				return RawNote.A (a);
@@ -228,7 +228,7 @@ namespace CodeSound.Pitch {
 		}
 
 		public const int Subdivisions = 24;
-		public static RawNote Build(int index) {
+		public static RawNote Create(int index) {
 			switch (index) {
 			case 0:
 				return Const.Adb;
